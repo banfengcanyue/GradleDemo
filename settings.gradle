@@ -17,6 +17,6 @@ dependencyResolutionManagement {
 }
 rootProject.name = "GradleDemo"
 include ':app'
-//include ':standalone-gradle-plugin'
+include ':standalone-gradle-plugin'
 //本地使用stand时可以这样测试
-includeBuild('standalone-gradle-plugin')
+//includeBuild('standalone-gradle-plugin')

@@ -78,3 +78,5 @@ src/main/groovy
 
 2. 独立插件发布到JitPack并引用
 > 在 settings.gradle 加上 include ':standalone-gradle-plugin'，变成一个普通模块
+> 然后在命令行执行：./gradlew publish
+> 提交并上传github仓库，打上tag，并打开 Jitpack 网站，搜索我们的项目名称，进行构建

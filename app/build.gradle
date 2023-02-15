@@ -14,7 +14,7 @@ plugins {
     // 方式3.1：在独立模块中写插件，并在本地引入（可以在根目录的build.gradle中引入，也可以在app模块的build.gradle中引入，同时引入会执行两次）
     // true-引入并执行，默认为true；false-引入不执行；
     // apply false代表此插件仅应用于构建中的部分或全部子model, 而不是root项目（该说法待确认）
-    id 'com.bfcy.gradle.standalone' apply true
+//    id 'com.bfcy.gradle.standalone' apply true
 }
 
 // 方式1：直接在 app 模块 build.gradle 中写插件，并引用
