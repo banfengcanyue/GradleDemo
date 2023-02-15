@@ -1,0 +1,45 @@
+apply plugin: 'kotlin'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // 因为想使用kotlin，所以这里增加kotlin插件
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+}
+
+// #################### 本地引用需要的配置 ####################
+
+// java-gradle插件
+// 会在 build 中自动创建resource即META-INF等等，并且以 api 的方式引入 gradleApi()
+apply plugin: 'java-gradle-plugin'
+
+// 本地依赖此插件时使用
+gradlePlugin {
+    plugins {
+        // 插件名,每一个插件都可以有，名字可自定义
+        buildSrcTestPlugin {
+            // 你的插件id，外部项目引用时需要
+            id = 'com.bfcy.gradle.buildSrc'
+            // 插件的具体实现类
+            implementationClass = 'com.bfcy.gradle.BuildSrcGradlePlugin'
+        }
+        // 第二个插件
+//        test2Plugin {
+//            id = xxx
+//            implementationClass = xxx
+//        }
+    }
+}

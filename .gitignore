@@ -1,0 +1,42 @@
+*.iml
+.gradle
+.gradle/
+
+.idea
+.idea/
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+
+/build
+build/
+/release
+release/
+
+/local.properties
+local.properties
+/captures
+.DS_Store
+.externalNativeBuild
+.cxx
+# secring.gpg
+
+
+
+# .gitignore文件位于项目根目录下，以下所有描述都基于这个条件
+
+# 以"#"开头的行是注释，会被忽略
+
+# test.log  忽略项目中所有目录下的 test.log 文件
+# *.log     忽略项目中所有目录下的 以 .log 为后缀的文件
+# !ok.log   排除 ok.log，此文件会被git上传
+
+# / 表示当前目录；最前面的 / 表示根目录，即.gitignore文件所在目录
+# dir     忽略所有地方的 dir 文件和目录，dir 既可以是文件也可以是目录
+# /dir    忽略根目录下的 dir 文件和目录，其他地方的 dir 文件和目录不会被忽略，dir 既可以是文件也可以是目录
+# dir/    忽略所有地方的 dir 目录，dir 在这里是指一个目录
+# /dir/   忽略根目录下的 dir 目录，其他地方的 dir 目录不会被忽略，dir 在这里是指一个目录
+# !dbg/ !/dbg/  如果要只忽略 dir 文件，可以通过 ! 将目录过滤掉

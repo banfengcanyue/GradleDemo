@@ -1,0 +1,75 @@
+apply plugin: 'kotlin'
+
+buildscript {
+    repositories {
+        google()
+        mavenCentral()
+    }
+    dependencies {
+        // 因为想使用kotlin，所以这里增加kotlin插件
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.6.10"
+}
+
+// #################### 本地引用需要的配置 ####################
+
+// java-gradle插件
+// 会在 build 中自动创建resource即META-INF等等，并且以 api 的方式引入 gradleApi()
+apply plugin: 'java-gradle-plugin'
+
+// 本地依赖此插件时使用
+gradlePlugin {
+    plugins {
+        // 插件名,每一个插件都可以有，名字可自定义
+        routerTestPlugin {
+            // 你的插件id，外部项目引用时需要
+            id = 'com.bfcy.gradle.standalone'
+            // 插件的具体实现类
+            implementationClass = 'com.bfcy.gradle.StandaloneGradlePlugin'
+        }
+        // 第二个插件
+//        test2Plugin {
+//            id = xxx
+//            implementationClass = xxx
+//        }
+    }
+}
+
+// #################### 上传JitPack需要的配置 ####################
+
+apply plugin: 'maven-publish'
+
+// 组名，可以理解为插件在那个分组下放着，最终是一个文件夹
+// com/bfcy/gradle/plugins/xxx
+group = 'com.bfcy.gradle'
+// 描述
+description = '这是一个独立插件'
+// 版本号
+version = '1.0.0'
+
+sourceCompatibility = JavaVersion.VERSION_11
+publishing {
+    publications {
+        maven(MavenPublication) {
+            // 版本id，最终会根据这个id-version生成相应的插件
+            artifactId = 'com.bfcy.gradle.plugin'
+            from components.java
+        }
+    }
+
+    repositories {
+        maven {
+            // 生成的插件位置
+            url = uri('../repo')
+        }
+    }
+}
