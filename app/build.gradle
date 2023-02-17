@@ -58,5 +58,7 @@ dependencies {
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.3'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    // 将根目录下的Gradle插件 classpath 'xxx' 放到这里，classpath 改为 implementation，就可以导入插件的源码
+    implementation 'com.android.tools.build:gradle:7.1.2'
 }
 

@@ -3,6 +3,7 @@
 .gradle/
 
 .idea
+/.idea
 .idea/
 /.idea/caches
 /.idea/libraries

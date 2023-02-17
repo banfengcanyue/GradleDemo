@@ -9,7 +9,7 @@ buildscript {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10"
         // 方式3.3：在独立模块中写插件，发布到远程仓库，并在引入
         //这里是测试最终jitpack生成的插件,你可以根据你的需要测试自己的插件
-//        classpath 'com.github.banfengcanyue:GradleDemo:0.0.1'
+//        classpath 'com.github.banfengcanyue:GradleDemo:0.0.2'
     }
 }
 
